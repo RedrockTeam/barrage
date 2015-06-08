@@ -168,11 +168,16 @@
                     },
                     success: function (response) {
                         $('textarea').val('');
-                        setTimeout(function () {
+                        alert(response.info);
+                        if (response.status != 200) {
                             flag = true;
                             self.removeClass('disabled');
-                        }, 1500);
-                        alert(response.info);
+                        } else {
+                            setTimeout(function () {
+                                flag = true;
+                                self.removeClass('disabled');
+                            }, 1500);
+                        }
                     }
                 });
             })
