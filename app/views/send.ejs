@@ -54,14 +54,14 @@
                                     <% if (activities.length != 0) { activities.forEach(function (el) { %>
                                         <option value="<%= el.activityId %>"><%= el.title %></option>
                                     <% })} else { %>
-                                        <option value="">暂无活动举办</option>
+                                        <option value=""><strong style="color: #ff6666">暂无活动举办</strong></option>
                                     <% }; %>
                                 </select>
                             </div>
                             
                             <div class="form-group">
                                 <label>弹幕颜色</label>
-                                <select class="form-control" name="color">
+                                <select class="form-control" name="color" style="font-weight: bold">
                                     <option value="">白色</option>
                                     <option value="#ff6666">红色</option>
                                     <option value="#00a1d6">蓝色</option>
@@ -72,8 +72,7 @@
                                     <option value="SaddleBrown">褐色</option>
                                     <option value="Purple">紫色</option>
                                     <option value="Gray">灰色</option>
-                                    <option value="LawnGreen">黑色</option>
-                                </select>    
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -124,8 +123,16 @@
 
             
             if (!$('select[name=activityId]').find('option').eq(0).val()) {
+                $('select[name=activityId]').attr('disabled', true);
                 $('.button-rounded').addClass('disabled');
+                $('select[name=color]').attr('disabled', true);
+                $('select[name=position]').attr('disabled', true);
+                $('textarea').attr('disabled', true);
             }
+
+            $('select[name=color]').change(function () {
+                $(this).css('color', $(this).find('option:selected').val());
+            })
             
             var flag = true;
             
