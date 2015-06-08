@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei', 'WenQuanYi MicroHei', sans-serif;
+}
+html{
+    height: 100%;
+    width: 100%;
+    min-width: 1000px;
+    min-height: 760px;
+}
+body{
+    background: url("../images/background.jpg") no-repeat;
+    height: 100%;
+    background-size:100% 100%;
+}
+.container{
+    width: 826px;
+    height: 665px;
+    margin:0 auto;
+    position: relative;
+    top: 60px;
+}
+.container .left,.container .right{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    position: absolute;
+    top: 265px;
+}
+.left{
+    left: -80px;
+}
+.right{
+    right: -80px;
+}
+.container .displayer{
+    width: 980px;
+    height: 720px;
+    overflow: hidden;
+    position: relative;
+}
+.container .displayer .rotator {
+    width: 2940px;
+    height: 720px;
+    position: relative;
+    left: 0;
+}
+#wall{
+    width: 786px;
+    height: 488px;
+    background-color: rgba(256,256,256,0.3);
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+#barrage{
+    position: relative;
+    z-index: 200;
+    width: 826px;
+    height: 528px;
+    margin:0 auto;
+}
+#shadow{
+    width: 1000px;
+    margin-left:-500px;
+    position: relative;
+    top: -90px;
+    left: 50%;
+    z-index: -1;
+}
+#shadow img{
+    width: 1000px;
+}
+#example_video_1{
+  margin: 0 auto;
+}
+
+#point{
+    position: absolute;
+    left: 50%;
+    margin-left: -88.4px;
+    bottom: 50px;
+}
+#point div{
+    float: left;
+    border-radius: 50%;
+    background-color: rgb( 221, 221, 221 );
+    width: 19px;
+    height: 19px;
+    margin: 3px 20px;
+    cursor: pointer;
+}
+#point div.onclick{
+    background-color: rgb( 255, 255, 255 );
+    width: 25px;
+    height: 25px;
+    margin: 0 17px;
+    animation: onclick 0.1s;
+    -moz-animation: onclick 0.1s;
+    -webkit-animation: onclick 0.1s;
+    -o-animation: onclick 0.1s;
+}
+#point div:hover{
+    background-color: rgb( 255, 255, 255 );
+}
+.declare {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 10px auto;
+    color: #fff;
+    font-size: 16px;
+}
+#cyxbs{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 5%;
+    right: 2.5%;
+    cursor: pointer;
+    border-radius: 25px;
+    -o-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+}
+.cyxbs{
+    width: 860px;
+    height: 750px;
+    margin: -375px 0 0 -430px;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #ccc;
+    z-index: 10000000000;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.cyxbs div{
+    font-size: 20px;
+    line-height: 48px;
+    height: 48px;
+    padding-left: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    background: -ms-linear-gradient(top, #ffffff, #f8f8f8);
+    background: -moz-linear-gradient(top, #ffffff, #f8f8f8);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#f8f8f8));
+    background: -webkit-linear-gradient(top, #ffffff, #f8f8f8);
+    background: -o-linear-gradient(top, #ffffff, #f8f8f8);
+    border-top-left-radius: 5px;
+    -o-border-top-left-radius: 5px;
+    -ms-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -o-border-top-right-radius: 5px;
+    -ms-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+.cyxbs img{
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+}
+
+@keyframes onclick {
+    0% {
+        width: 19px;
+        height: 19px;
+        margin: 3px 20px;
+    }
+    100% {
+        width: 25px;
+        height: 25px;
+        margin: 0 17px;
+    }
+}
+@-moz-keyframes onclick {
+    0% {
+        width: 19px;
+        height: 19px;
+        margin: 3px 20px;
+    }
+    100% {
+        width: 25px;
+        height: 25px;
+        margin: 0 17px;
+    }
+}
+@-webkit-keyframes onclick {
+    0% {
+        width: 19px;
+        height: 19px;
+        margin: 3px 20px;
+    }
+    100% {
+        width: 25px;
+        height: 25px;
+        margin: 0 17px;
+    }
+}
+@-o-keyframes onclick {
+    0% {
+        width: 19px;
+        height: 19px;
+        margin: 3px 20px;
+    }
+    100% {
+        width: 25px;
+        height: 25px;
+        margin: 0 17px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

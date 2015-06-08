@@ -1,0 +1,7 @@
+*.log
+barrage.sublime-workspace
+.idea
+.DS_Store
+config.js
+public/.DS_Store
+node_modules/**

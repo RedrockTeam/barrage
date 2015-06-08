@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta charset="UTF-8">
+        <link href="css/index.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico">
+        <link href="css/lib/library.css" rel="stylesheet">
+        <link href="css/lib/video-js.css" rel="stylesheet">
+    </head>
+    
+    <body style="display: none">
+
+        <div class="container">
+            <div class="barrageContainer">
+                <div id="barrage">
+                    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="826" height="528" poster="images/<%= info.cover %>" data-id="<%= info.videoSrc %>">
+                    </video>
+                </div>
+            </div>
+            
+            <div class="wallContainer" style="display: none">
+                <div id="wall"></div>
+            </div>
+
+            <div class="slotMachineContainer" style="display: none">
+            </div>
+
+            <div id="shadow">
+                <img src="images/shadow.png"/>
+            </div>
+
+            <ul id="point">
+                <div num="1" class="onclick"></div>
+                <div num="2"></div>
+                <div num="3"></div>
+            </ul>
+            <p class="declare">本次活动最终解释权归红岩网校工作站所有 中奖信息以重邮小帮手公众号推送信息为准</p>
+        </div>
+
+        <div class="screen" id="prizeScreen">
+            <div class="prize">
+                <div class="name">
+                    <p>恭喜 !<br><span class="people"></span>童鞋中奖 !</p>
+                    <p>您的兑奖key为<br><span class="Key"></span></p>
+                    <p>请凭借重邮小帮手<br>推送消息领奖 !</p>
+                </div>
+                <div class="confirm">
+                    <p>确认</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen" id="cyxbsScreen">
+            <div class="cyxbs">
+                <div class="top">扫描二维码，关注重邮小帮手，参与线上弹幕互动</div>
+                <img src="images/cyxbs.jpg">
+            </div>
+        </div>
+        <img id="cyxbs" src="images/cyxbslogo.jpg"></img>
+
+        
+
+    </body>
+    <script src="socket_io/socket.io.js"></script>
+    <script src="js/lib/jquery-2.1.3.min.js"></script>
+    <script src="js/lib/jquery.cookie.js"></script>
+    <script src="js/lib/library.js"></script>
+    <script src="js/lib/youku.js"></script>
+    <script src="js/index.js"></script>
+    
+</html>
+

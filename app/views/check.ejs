@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title><%= title %></title>
+        <link href="css/check.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico">
+    </head>
+    <body>
+        <header class="title">
+            <p>弹幕上墙板块后台审核界面</p>
+        </header>
+        <section class="main">
+            <div class="statistics">
+                <div class="data">
+                    <p class="right"><span class="peoplenum"><%= userCount %></span>人参加了活动</p><p>已经有</p>
+                    <p class="right"><span class="commentnum"><%= allCount %></span>条评论</p><p>累计共发送了</p>
+                    <p class="right"><span class="ave"><%= ave %></span>条评论</p><p>平均每人发送了</p>
+                </div>
+                <div class="btn btn-info allBarrageToIndex">全部通过</div>
+                <div class="btn btn-success openAutoCheck" disabled="disabled">开启自动审核</div>
+                <div class="btn btn-warning clearAllBarrage">清空消息</div>
+                <div class="filter">
+                    <div class="show">
+                        <p>已屏蔽词汇<strong>(单击词汇删除)</strong></p>
+                        <div>
+                            <% if (blackWords.length != 0) { blackWords.forEach(function (word) { %>
+                                <span class="blackWord" data-id="<%= word.id %>">
+                                    <%= word.content %>
+                                </span>
+                            <% })}; %>
+                        </div>
+                    </div>
+                    <div class="add">
+                        <p>
+                            <input type="text" name="filter">
+                            <span class="btn btn-success addBlackWord">添加</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="check"></div>
+        </section>
+        <footer>
+            <p>
+                <a href="http://hongyan.cqupt.edu.cn/aboutus/" title="关于红岩网校">关于红岩网校</a> |
+                <a href="###" title="网站地图">网站地图</a> |
+                <a href="###" title="指出错误">指出错误</a> |
+                <a href="###" title="管理入口">管理入口</a>
+            </p>
+            <p>本网站由红岩网校工作站负责开发，管理，不经红岩网校委员会书面同意，不得进行转载</p>
+            <p>地址：重庆市南岸区崇文路2号（重庆邮电大学内） 400065 E-mail:redrock@cqupt.edu.cn (023-62461084)</p>
+        </footer>
+    </body>
+    
+    <script src="socket_io/socket.io.js"></script>
+    <script src="js/lib/jquery-2.1.3.min.js"></script>
+    <script src="http://hongyan.cqupt.edu.cn/cdn/js??273474_jquery.cookie.min.js"></script>
+    <script src="js/check.js"></script>
+
+</html>
