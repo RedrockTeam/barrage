@@ -13,7 +13,7 @@
         background: rgb(33, 33, 33);
         color: #fff;
         border-radius: 0 !important;
-        border: solid 1px #11AA8C;
+        border: solid 1px rgb(33, 33, 33);
     }
     .jumbotron strong {
         color: rgb(255, 0, 53);
@@ -108,7 +108,7 @@
         border-width: 1px;
         background: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#e1e1e1));
         background: linear-gradient(#f6f6f6, #e1e1e1);
-        padding: 10px 15px;
+        padding: 9px 15px;
         font-weight: bold;
         font-size: 16px;
     }
