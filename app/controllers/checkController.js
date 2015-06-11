@@ -69,12 +69,18 @@
 
 		// 添加屏蔽词
 		addBlackWord: function (req, res)  {
+			var colorsArray = ['#006633', '#0099ff', '#f16e50', '#666666', '#4c549f', '#87b11d'];
+			var color = colorsArray[parseInt(6 * Math.random())];
+			req.body.color = color;
 			client.query("INSERT INTO wp_filter SET ?", req.body, function (error, info) {
 				if (info.affectedRows) {
 					return res.json({
 						status: 200,
 						info: '屏蔽词汇添加成功',
-						data: info.insertId
+						data: {
+							id: info.insertId,
+							color: color
+						}
 					});
 				} else {
 					return res.json({
@@ -82,7 +88,7 @@
 						info: '屏蔽词汇添加失败'
 					});
 				}
-			})
+			});
 		},
 
 
