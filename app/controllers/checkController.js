@@ -69,8 +69,8 @@
 
 		// 添加屏蔽词
 		addBlackWord: function (req, res)  {
-			var colorsArray = ['#006633', '#0099ff', '#f16e50', '#666666', '#4c549f', '#87b11d'];
-			var color = colorsArray[parseInt(6 * Math.random())];
+			var colorsArray = ['#006633', '#0099ff', '#f16e50', '#ca0d86', '#666666', '#4c549f', '#87b11d'];
+			var color = colorsArray[parseInt(7 * Math.random())];
 			req.body.color = color;
 			client.query("INSERT INTO wp_filter SET ?", req.body, function (error, info) {
 				if (info.affectedRows) {
