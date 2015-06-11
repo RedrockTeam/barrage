@@ -44,7 +44,7 @@
                     <div class="panel-body" style="font-weight: bold; font-size: 18px;">
                         <% if (blackWords.length != 0) { %>
                             <% blackWords.forEach(function (word) { %>
-                                <strong style="background-color: <%= word.color %>" data-id=<%= word.id %>><%= word.content %></strong>
+                                <strong class="blackWord" style="background-color: <%= word.color %>" data-id=<%= word.id %>><%= word.content %></strong>
                             <% }); %>
                         <%  } %>
                     </div>
