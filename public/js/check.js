@@ -190,8 +190,8 @@
                         $('input[name=filter]').val('');
                         $('<strong>', {
                             'text': blackWord,
-                            'style': 'background-color: '+ response.data.color,
                             'class': 'blackWord',
+                            'style': 'background-color: '+ response.data.color,
                             'data-id': response.data.id
                         }).appendTo($('.black-words-list').find('.panel-body'));
                     } else {
@@ -200,7 +200,7 @@
                 }
             });
         });
-    })($('.addBlackWord'))
+    })($('.addBlackWord'));
     
 
     // 删除屏蔽词汇
@@ -217,7 +217,9 @@
             },
             success: function (response) {
                 if (response.status === 200) {
-                    self.remove();
+                    self.fadeOut(100, function () {
+                        self.remove();
+                    })
                 } else {
                     alert(response.info);
                 }
