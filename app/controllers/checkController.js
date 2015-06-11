@@ -30,15 +30,19 @@
 								ave = ave.toFixed(1);
 							}
 						}
-						client.query("SELECT * FROM wp_filter WHERE activityId = '"+ req.cookies.id + "' ORDER BY id ASC", function (error, result) {
-							return res.render("check", {
-								title: '红岩网校弹幕系统审核',
-								allCount: allCount,
-								userCount: userCount,
-								ave: ave,
-								blackWords: result
+						client.query("SELECT * FROM wp_filter WHERE activityId = '"+ req.cookies.id + "' ORDER BY id ASC", function (error, blackWords) {
+							var blackWords = blackWords;
+							client.query("SELECT * FROM wp_black WHERE activityId = '"+ req.cookies.id + "' ORDER BY id ASC", function (error, blackUsers) {
+								return res.render("check", {
+									title: '红岩网校弹幕系统审核',
+									allCount: allCount,
+									userCount: userCount,
+									ave: ave,
+									blackWords: blackWords,
+									blackUsers: blackUsers
+								});
 							});
-						})
+						});
 					})
 				});
 			} catch (e) {
