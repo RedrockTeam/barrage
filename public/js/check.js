@@ -170,35 +170,38 @@
 
 
     // 添加屏蔽词汇
-    $('.addBlackWord').on('click', function (event) {
-        $.ajax({
-            url: 'addBlackWord',
-            type: 'POST',
-            data: {
-                activityId: $.cookie('id'),
-                type: 0,
-                content: $('input[name=filter]').val()
-            },
-            beforeSend: function () {
-                flag = false;
-            },
-            success: function (response) {
-                flag = true;
-                if (response.status === 200) {
-                    var blackWord = $('input[name=filter]').val();
-                    $('input[name=filter]').val('');
-                    $('<strong>', {
-                        'text': blackWord,
-                        'style': 'background-color: ' + response.data.color,
-                        'class': 'blackWord',
-                        'data-id': response.data.id
-                    }).appendTo($('.black-words-list').find('.panel-body'));
-                } else {
-                    alert(response.info);
+    (function addBlackWord(element) {
+        element.on('click', function (event) {
+            $.ajax({
+                url: 'addBlackWord',
+                type: 'POST',
+                data: {
+                    activityId: $.cookie('id'),
+                    type: 0,
+                    content: $('input[name=filter]').val()
+                },
+                beforeSend: function () {
+                    flag = false;
+                },
+                success: function (response) {
+                    flag = true;
+                    if (response.status === 200) {
+                        var blackWord = $('input[name=filter]').val();
+                        $('input[name=filter]').val('');
+                        $('<strong>', {
+                            'text': blackWord,
+                            'style': 'background-color: '+ response.data.color +,
+                            'class': 'blackWord',
+                            'data-id': response.data.id
+                        }).appendTo($('.black-words-list').find('.panel-body'));
+                    } else {
+                        alert(response.info);
+                    }
                 }
-            }
-        })
-    });
+            });
+        });
+    })($('.addBlackWord'))
+    
 
     // 删除屏蔽词汇
     $('.black-words-list').on('dblclick', '.blackWord', function (event) {
