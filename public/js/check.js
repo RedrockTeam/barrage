@@ -190,7 +190,7 @@
                         $('input[name=filter]').val('');
                         $('<strong>', {
                             'text': blackWord,
-                            'style': 'background-color: '+ response.data.color +,
+                            'style': 'background-color: '+ response.data.color,
                             'class': 'blackWord',
                             'data-id': response.data.id
                         }).appendTo($('.black-words-list').find('.panel-body'));
