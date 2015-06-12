@@ -17,7 +17,7 @@
 			var id = req.cookies.id;
 
 			if (!id) {
-				res.redirect('login');
+				res.redirect('checkLogin');
 			}
 			try {
 				client.query("SELECT count(*) as allCount FROM wp_barrage WHERE activityId = '"+ id + "'", function (error, result) {
