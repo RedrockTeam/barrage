@@ -370,7 +370,7 @@
         
         var flag = true;
         
-        $('.button-rounded').on('click', function (event) {
+        $('.send-barrage-btn').on('click', function (event) {
             event.preventDefault();
             if (!flag) return;
             if ($.trim($('textarea').val()) == '') {
