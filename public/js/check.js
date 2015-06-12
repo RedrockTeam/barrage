@@ -362,7 +362,7 @@
         }
     }
 
-    function sendBarrage() {
+    (function sendBarrage() {
 
         $('select[name=color]').change(function () {
             $(this).css('color', $(this).find('option:selected').val());
@@ -408,7 +408,7 @@
                 }
             });
         })
-    }
+    })();
 
     // socket事件监听
     socket.on('barrageToCheck', function (data) {
