@@ -367,11 +367,10 @@
         $('select[name=color]').change(function () {
             $(this).css('color', $(this).find('option:selected').val());
         });
-        
         var flag = true;
-        
         $('.send-barrage-btn').on('click', function (event) {
             event.preventDefault();
+            var self = $(this);
             if (!flag) return;
             if ($.trim($('textarea').val()) == '') {
                 alert('弹幕内容不能为空!');
