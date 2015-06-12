@@ -16,8 +16,9 @@
 		
 		
 		loginDeal: function (req, res, next) {	
-			var activityId = req.body.activityId;
-			client.query("SELECT * FROM wp_activity WHERE activityId = '" + activityId + "'", function (error, result) {
+			var activityId = req.body.activityId,
+				stuId = req.body.stuId;
+			client.query("SELECT * FROM wp_activity WHERE activityId = '" + activityId + "' AND stuId = '" + stuId + "'", function (error, result) {
 				if (result.length != 0) {
 					return res.json({
 						status: 200,
