@@ -350,9 +350,18 @@ function zoom(obj){
 
     //设置新的队列长度
 
+    // slideQueue.length = newLength;
+    // fixQueue.length = newLength;
+    // reverseQueue.length = newLength;
+    var newLength = 9;
     slideQueue.length = newLength;
     fixQueue.length = newLength;
     reverseQueue.length = newLength;
+    for (var i = newLength - 1; i >= 0; i--) {
+        slideQueue[i] = 1;
+        fixQueue[i] = 1;
+        reverseQueue[i] = 1;
+    };
 
     if(oldLength < newLength){
 
