@@ -362,52 +362,49 @@
         }
     }
 
-    (function sendBarrage() {
 
-        $('select[name=color]').change(function () {
-            $(this).css('color', $(this).find('option:selected').val());
-        });
-        var flag = true;
-        $('.send-barrage-btn').on('click', function (event) {
-            event.preventDefault();
-            var self = $(this);
-            if (!flag) return;
-            if ($.trim($('textarea').val()) == '') {
-                alert('弹幕内容不能为空!');
-                return;   
-            }
-            $.ajax({
-                url: "barrageToCheck",
-                type: 'POST',
-                data: {
-                    activityId: $.cookie('id'),
-                    openid: 1111111111111111,
-                    face: 'http://202.202.43.125/chat_video/images/redrock-face.png',
-                    nickname: '弹幕君',
-                    color: $('select[name=color]').val(),
-                    text: $('textarea').val(),
-                    position: $('select[name=position]').val(),
-                    type: 1
-                },
-                beforeSend: function () {
-                    flag = false;
-                    self.addClass('disabled');
-                },
-                success: function (response) {
-                    $('textarea').val('');
-                    if (response.status != 200) {
+    $('select[name=color]').change(function () {
+        $(this).css('color', $(this).find('option:selected').val());
+    });
+    $('.send-barrage-btn').on('click', function (event) {
+        event.preventDefault();
+        var self = $(this);
+        if (!flag) return;
+        if ($.trim($('textarea').val()) == '') {
+            alert('弹幕内容不能为空!');
+            return;   
+        }
+        $.ajax({
+            url: "barrageToCheck",
+            type: 'POST',
+            data: {
+                activityId: $.cookie('id'),
+                openid: 1111111111111111,
+                face: 'http://202.202.43.125/chat_video/images/redrock-face.png',
+                nickname: '弹幕君',
+                color: $('select[name=color]').val(),
+                text: $('textarea').val(),
+                position: $('select[name=position]').val(),
+                type: 1
+            },
+            beforeSend: function () {
+                flag = false;
+                self.addClass('disabled');
+            },
+            success: function (response) {
+                $('textarea').val('');
+                if (response.status != 200) {
+                    flag = true;
+                    self.removeClass('disabled');
+                } else {
+                    setTimeout(function () {
                         flag = true;
                         self.removeClass('disabled');
-                    } else {
-                        setTimeout(function () {
-                            flag = true;
-                            self.removeClass('disabled');
-                        }, 400);
-                    }
+                    }, 400);
                 }
-            });
-        })
-    })();
+            }
+        });
+    })
 
     // socket事件监听
     socket.on('barrageToCheck', function (data) {
