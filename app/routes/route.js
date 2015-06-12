@@ -24,6 +24,7 @@
 	/*
 	 * 审核页面路由
 	 */
+	_Router.get('/checkLogin', checkController.loginView);
 	_Router.post('/addBlackUser', checkController.addBlackUser);
 	_Router.post('/addBlackWord', checkController.addBlackWord);
 	_Router.post('/delBlackWord', checkController.delBlackWord);

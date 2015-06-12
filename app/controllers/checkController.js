@@ -8,6 +8,11 @@
 
 
 	var checkController = {
+
+		loginView: function (req, res) {
+			return res.render('check-login');
+		},
+
 		checkView: function (req, res, next) {
 			var id = req.cookies.id;
 
