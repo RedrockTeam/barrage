@@ -350,29 +350,30 @@ function zoom(obj){
 
     //设置新的队列长度
 
-    // slideQueue.length = newLength;
-    // fixQueue.length = newLength;
-    // reverseQueue.length = newLength;
-    var newLength = 9;
     slideQueue.length = newLength;
     fixQueue.length = newLength;
     reverseQueue.length = newLength;
-    for (var i = newLength - 1; i >= 0; i--) {
-        slideQueue[i] = 1;
-        fixQueue[i] = 1;
-        reverseQueue[i] = 1;
-    };
+    
 
     if(oldLength < newLength){
 
         //新的队列元素初始化
 
-        for (var i = newLength - 1; i >= oldLength; i--) {
+        // for (var i = newLength - 1; i >= oldLength; i--) {
 
+        //     slideQueue[i] = 1;
+        //     fixQueue[i] = 1;
+        //     reverseQueue[i] = 1;
+
+        // };
+        var newLength = 9;
+        slideQueue.length = newLength;
+        fixQueue.length = newLength;
+        reverseQueue.length = newLength;
+        for (var i = newLength - 1; i >= 0; i--) {
             slideQueue[i] = 1;
             fixQueue[i] = 1;
             reverseQueue[i] = 1;
-
         };
 
         //将滑动等待队列中的弹幕调出
