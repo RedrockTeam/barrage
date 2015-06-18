@@ -71,7 +71,7 @@
         });
         var $h4 = $('<h4>', {
             'class': 'media-heading',
-            'text': data.nickname ? data.nickname : "新增用户"
+            'text': data.nickname ? data.nickname : "新关注用户"
         });
         var $strong = $('<strong>', {
             'style': 'color: ' + data.color,
