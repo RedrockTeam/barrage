@@ -133,11 +133,11 @@
                         $('<strong>', {
                             'text': media.find('h4').html()
                         }).appendTo($listGroupItem);
-                        $('<button>', {
-                            'class': 'button button-small button-raised button-primary pull-right',
-                            'text': '移除',
-                            'data-id': media.attr('openid')
-                        }).appendTo($listGroupItem);
+                        // $('<button>', {
+                        //     'class': 'button button-small button-raised button-primary pull-right',
+                        //     'text': '移除',
+                        //     'data-id': media.attr('openid')
+                        // }).appendTo($listGroupItem);
 
                         if ($('.black-user-empty').length != 0) {
                             $('.black-user-empty').remove();

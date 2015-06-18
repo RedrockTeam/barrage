@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="panel panel-default black-words-list">
-                    <div class="panel-heading">屏蔽词汇</div>
+                    <div class="panel-heading">屏蔽词汇<strong>(双击词汇即可删除)</strong></div>
                     <div class="panel-body" style="font-weight: bold; font-size: 18px;">
                         <% if (blackWords.length != 0) { %>
                             <% blackWords.forEach(function (word) { %>
@@ -118,7 +118,6 @@
                             <div class="form-group">
                                 <label>弹幕位置</label>
                                 <select class="form-control" name="position">
-                                    <option value="reverse">逆向弹幕</option>
                                     <option value="">滚动弹幕</option>
                                     <option value="top">顶部弹幕</option>
                                     <option value="bottom">底部弹幕</option>
