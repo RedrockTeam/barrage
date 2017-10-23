@@ -1061,7 +1061,7 @@ function drawARaffle(obj){
     //新的list数组获取位置
     $.ajax({
         type: 'POST',
-        url: "http://hongyan.cqupt.edu.cn/barrage/index.php?s=/Home/Api/lotteryList",
+        url: "https://hongyan.cqupt.edu.cn/barrage/index.php?s=/Home/Api/lotteryList",
         data: {activityId :$.cookie('id')},
         success: function(data){
             if(data.status == 200 && data.info == "success"){

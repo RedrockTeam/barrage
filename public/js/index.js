@@ -144,7 +144,7 @@
 			$("#cyxbsScreen").hide("normal");
 		});
 	});
-	
+/*	
 	$(function () {
 		parseYoukuCode($('#example_video_1').attr('data-id'), function (data){
 			if(Array.isArray(data)){
@@ -158,7 +158,7 @@
 		});
 	});
 	
-	
+*/	
 
 	
 	
